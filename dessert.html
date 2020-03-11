@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Ranchers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Desider Dessert</title>
+</head>
+
+<body class="body3">
+    <header class="purple">
+        <nav class="navigation">
+            <a href="index.html"><img src="images/desider-logo.svg" alt="logo" width="94px"></a>
+            <div class="navigation text">
+                <a class="a" href="index.html">Home</a>
+                <a class="a" href="dinner.html">Dinner</a>
+                <a class="a" href="lunch.html">Lunch</a>
+                <a class="a" href="dessert.html">Dessert</a>
+            </div>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="container2">
+            <div class="item-1">
+                <h1>Your dessert for today is...</h1>
+                <h2 id="randomDessert"></h2>
+                <button class="purple-button" onclick="randomDessert()"><h2>Try again</h2></button>
+            </div>
+            <div class="item-2">
+                <img class="image" id="foodIMG" src="" alt="img">
+            </div>
+        </div>
+    </main>
+    <script>
+        var dessertArray = [
+            "Cinamon-bun",
+            "Ice-cream",
+            "Pavlova",
+            "Brownie"
+        ];
+
+        function randomDessert() {
+            var randomDessert = document.getElementById("randomDessert").innerHTML = dessertArray[Math.floor(Math.random() * dessertArray.length)];
+            n = dessertArray.length;
+
+            for (var i = 0; i < n; i++) {
+                document.getElementById("foodIMG").src = "images/" + randomDessert + ".jpg";
+            }
+            return randomDessert;
+        }
+
+        document.onload = randomDessert();
+    </script>
+</body>
+
+</html>
